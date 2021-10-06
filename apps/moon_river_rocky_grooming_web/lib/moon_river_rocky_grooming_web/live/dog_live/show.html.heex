@@ -1,0 +1,22 @@
+<h1>Show Dog</h1>
+
+<%= if @live_action in [:edit] do %>
+  <%= live_modal MoonRiverRockyGroomingWeb.DogLive.FormComponent,
+    id: @dog.id,
+    title: @page_title,
+    action: @live_action,
+    dog: @dog,
+    return_to: Routes.dog_show_path(@socket, :show, @dog) %>
+<% end %>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @dog.name %>
+  </li>
+
+</ul>
+
+<span><%= live_patch "Edit", to: Routes.dog_show_path(@socket, :edit, @dog), class: "button" %></span> |
+<span><%= live_redirect "Back", to: Routes.dog_index_path(@socket, :index) %></span>
