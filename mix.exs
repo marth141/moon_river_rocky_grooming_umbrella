@@ -39,7 +39,12 @@ defmodule MoonRiverRockyGrooming.Umbrella.MixProject do
   defp aliases do
     [
       # run `mix setup` in all child apps
-      setup: ["cmd mix setup"]
+      setup: ["cmd mix setup"],
+      "assets.deploy": [
+        "cmd --cd /home/nathan/code/moon_river_rocky_grooming_umbrella/apps/moon_river_rocky_grooming_web/assets npm run deploy",
+        "esbuild default --minify",
+        "phx.digest"
+      ]
     ]
   end
 end

@@ -1,6 +1,8 @@
 defmodule MoonRiverRockyGroomingWeb.DogLive.Index do
   use MoonRiverRockyGroomingWeb, :live_view
 
+  require Integer
+
   alias MoonRiverRockyGrooming.Dogs
   alias MoonRiverRockyGrooming.Dogs.Dog
 
